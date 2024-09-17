@@ -1,4 +1,4 @@
-# Regressive counter project
+# Countdown project
 
 I was challenged by a friend to make this reference to a series we liked
 
