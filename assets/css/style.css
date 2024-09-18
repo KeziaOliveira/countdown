@@ -1,14 +1,9 @@
 body {
   font-family: "Arial", sans-serif;
-  background-color: #000000; /* Fundo preto */
+  background-color: #000000;
   text-align: center;
   padding: 50px;
   margin-top: 5rem;
-}
-
-h1 {
-  font-size: 3em;
-  color: #ffffff; /* Cor branca para o título */
 }
 
 .countdown {
@@ -23,6 +18,7 @@ h1 {
   justify-content: center;
   gap: 20px;
   font-size: 2em;
+  flex-wrap: nowrap; /* Prevent breaking into new lines */
 }
 
 .number {
@@ -32,11 +28,10 @@ h1 {
   padding: 10px;
   border-radius: 5px;
   display: flex;
-  flex-direction: column; /* Alinha os números e o texto em coluna */
-  align-items: center; /* Centraliza o texto horizontalmente */
-  justify-content: center; /* Centraliza o conteúdo verticalmente */
-  height: 100px; /* Definir uma altura fixa para o bloco */
-  width: 80px; /* Definir uma largura fixa */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
 }
 
 span {
@@ -50,9 +45,62 @@ span {
   color: #820a0a;
   font-size: 6rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center; /* Align dots with the bottom of the numbers */
   justify-content: center;
   padding: 0 2rem;
-  margin-top: 0;
+  margin-bottom: 20px;
   line-height: 1;
+}
+
+/* Media query for screens wider than 768px (tablets) */
+@media screen and (min-width: 768px) {
+  .number {
+    width: 100px; /* Increase the size of the numbers */
+    font-size: 7rem;
+  }
+}
+
+/* Media query for screens narrower than 768px (mobile devices) */
+@media screen and (max-width: 768px) {
+  .time {
+    gap: 10px; /* Reduce gap between time blocks */
+    font-size: 1.5em; /* Reduce the font size */
+  }
+
+  .number {
+    width: 60px; /* Adjust width */
+    font-size: 4rem; /* Decrease font size */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .dots {
+    font-size: 4rem; /* Decrease the size of the dots */
+    padding: 0 1rem; /* Reduce padding */
+  }
+
+  span {
+    font-size: 0.25em; /* Adjust the size of the labels */
+  }
+}
+
+/* Media query for screens narrower than 480px (small mobile devices) */
+@media screen and (max-width: 480px) {
+  .time {
+    gap: 5px; /* Reduce gap further */
+  }
+
+  .number {
+    width: 50px; /* Adjust width for smaller screens */
+    font-size: 3rem; /* Further decrease font size */
+    padding: 3px; /* Further reduce padding */
+  }
+
+  .dots {
+    font-size: 3rem; /* Further decrease the size of the dots */
+    padding: 0 0.5rem; /* Further reduce padding */
+  }
+
+  span {
+    font-size: 0.2em; /* Adjust the size of the labels even more */
+  }
 }
